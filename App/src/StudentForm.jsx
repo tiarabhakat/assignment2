@@ -48,14 +48,14 @@ export default function StudentForm(){
 
     // Showing success message
     const successMessage = () => {
-        return (
+         return (
             <div
                 className="success"
                 style={{
-                    display: submitted ? "" : "none",
+                    display: registered ? "" : "none",
                 }}
             >
-                <h1>User {name} has been successfully registered!!</h1>
+                <h1>User {first_name} {last_name} has been successfully registered!!</h1>
             </div>
         );
     };
@@ -117,10 +117,10 @@ export default function StudentForm(){
                     onChange={handleProgram}
                     className="input"
                     value={program}
-                    type="password"
+                    type="text"
                 />
 
-                <button onClick={handleRegistered} className="btn" type="register">
+                <button onClick={handleRegistered} className="btn" type="submit">
                     Register
                 </button>
             </form>
