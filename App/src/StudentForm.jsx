@@ -90,7 +90,7 @@ export default function StudentForm(){
 
             {/* Calling to the methods */}
             <div className="messages">
-                {emailerrorMessage()}
+                {emailErrorMessage()}
                 {errorMessage()}
                 {successMessage()}
             </div>
