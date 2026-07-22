@@ -10,6 +10,7 @@ export default function StudentForm(){
     // error checking states
     const [registered, setRegistered] = useState(false);
     const [error, setError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
 
     // handle changes - first_name, last_name, email, program
     // Handling the name change
@@ -37,18 +38,21 @@ export default function StudentForm(){
 
     // Handling the student registration
     const handleRegistered = (e) => {
-        e.preventDefault();
-        if (first_name === "" ||last_name === "" || email === "" || program === "") {
-            setError(true);
-            setRegistered(false);
-        } else if (!email.includes("@")){
-            setError(true);
-            setRegistered(false);
-        } else {
-            setRegistered(true);
-            setError(false);
-        }
-    };
+    e.preventDefault();
+    if (first_name === "" || last_name === "" || email === "" || program === "") {
+        setError(true);
+        setEmailError(false);
+        setRegistered(false);
+    } else if (!email.includes("@")) {
+        setEmailError(true);
+        setError(false);
+        setRegistered(false);
+    } else {
+        setRegistered(true);
+        setError(false);
+        setEmailError(false);
+    }
+};
 
     // Showing success message
     const successMessage = () => {
