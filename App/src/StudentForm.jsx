@@ -40,6 +40,10 @@ export default function StudentForm(){
         e.preventDefault();
         if (first_name === "" ||last_name === "" || email === "" || program === "") {
             setError(true);
+            setRegistered(false);
+        } else if (email.includes("@")){
+            setError(true);
+            setRegistered(false);
         } else {
             setRegistered(true);
             setError(false);
