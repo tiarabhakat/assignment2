@@ -41,7 +41,7 @@ export default function StudentForm(){
         if (first_name === "" ||last_name === "" || email === "" || program === "") {
             setError(true);
             setRegistered(false);
-        } else if (email.includes("@")){
+        } else if (!email.includes("@")){
             setError(true);
             setRegistered(false);
         } else {
