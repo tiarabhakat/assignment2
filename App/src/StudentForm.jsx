@@ -67,16 +67,20 @@ export default function StudentForm(){
     // Showing error message if error is true
     const errorMessage = () => {
         return (
-            <div
-                className="error"
-                style={{
-                    display: error ? "" : "none",
-                }}
-            >
+            <div className="error" style={{ display: error ? "" : "none" }}>
                 <h1>Please enter all the fields</h1>
             </div>
         );
     };
+
+    const emailErrorMessage = () => {
+        return (
+            <div className="error" style={{ display: emailError ? "" : "none" }}>
+                <h1>Please enter a valid email address</h1>
+            </div>
+        );
+    };
+
 
     return (
         <div className="form">
